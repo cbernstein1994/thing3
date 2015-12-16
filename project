@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\title{When Two Cars Race\vspace{-2ex}}
+\author{Cassidy Bernstein}
+\date{\vspace{-1.5ex}October 2015}
+
+\begin{document}
+\setlength{\topmargin}{-1.2in}
+
+\maketitle
+
+\vspace{-7ex}
+
+%----------------------------------
+% SECTION 1
+%I had issues 
+%----------------------------------
+\section{Situation at Hand}
+
+Cars race around the inner lane of a circular racetrack. Each car is 2.0 meters wide and 5.0 meters long. They travel at a speed of 50 m/s in a circle of radius 40 meters,with the rear car 1.0 meter behind the rear bumper of the front car. The rear car can perform constant acceleration from 50 m/s to 60 m/s in two seconds, stay at 60 m/s for two seconds and then return (at a constant rate) to 50 m/s over the next 2 seconds. 
+
+The front automobile will be $car_1$ and the rear $car_2$.
+
+%----------------------------------
+% SECTION 2
+%I tried to render this scenario in more complex ways, but had %trouble recompiling all created.
+%----------------------------------
+\section{Visualization}
+
+\begin{center}
+\framebox(100,40){$Car_1$}$\hspace{20 pt}$\framebox(100,40){$Car_2$}
+\end{center}
+\begin{center}
+
+\begin{center}
+\vspace{-2.5ex}
+\begin{tikzpicture}
+\draw[red,dashed] (0,0) circle (1);
+\draw (0,0) circle (1.5)
+\end{tikzpicture}
+
+\vspace{-10}
+%----------------------------------
+% SECTION 3
+%----------------------------------
+
+\section{At the Start}
+The velocity given as 50m/s is a linear velocity. The angular velocity can be determined by utilizing the following formaula, where $\omega$ represents angular velocity, 2$\pi$ is one full rotation, r is radians, and $\Delta$t is the amount of time required for one rotation, or the period (T). Circumference of the track is calculated 
+
+\begin{equation}
+\underbrace{\omega}_{\text{tangential velocity}}=\left(\frac{\Delta\theta}{\Delta t}\right)=\left(\frac{2\pi r}{T}\right)
+\end{equation}
+
+It can be determined that both cars initially haven an angular velocity of 1.25 rad/s
+
+$Car_1$ and $Car_2$ both have tangential velocity ($\omega$) because they are moving in a circle. Neither has a radial velocity because they radius of the path they are traveling remains constant ... for now.
+Due to the unchanging radius, neither car is experiencing Coriolis or radial acceleration. The velocities are constant, so their tangential accelerations remain  zero, the only acceleration with magnitude that they are experiencing is centrifugal. This acceleration maintains circular motion around a central point. In the following equation, r is the radius.
+
+\begin{equation}
+\underbrace{-r \omega^2 \hat{r}}_{\text{centrifugal acceleration}}=\left(-\frac{v^2}{r}\right)\hat{r}
+\end{equation}
+
+%----------------------------------
+%With attempts to write out the complete formula for acceleration, %compilation failed to work. 
+%----------------------------------
+
+\section{Change of Lanes}
+ In order to move around $car_1$, $car_2$ must switch lanes. It may change lanes by reducing its radius, or increasing its radius. This change of radius will require a radial velocity.
+ \begin{equation}
+\underbrace{v_r\hat{r}}_{\text{radial velocity}}
+\end{equation}
+
+$Car_2$ may change lanes by reducing its radius and passing $car_1$ on the left, or by increasing its radius and passing $car_1$ on the right. In order to maintain the same tangential velocity with a decreased radius, the Coriolis acceleration would be negative. With an increased radius, the Coriolis acceleration would be positive. In this scenario, a pass on the right, with an increase in radius, will be analyzed.
+
+\begin{equation}
+\underbrace{2v_r\omega\hat{\theta}}_{\text{Coriolis acceleration}}
+\end{equation}
+
+%----------------------------------
+% SECTION 4
+%Trouble ending the 'center' command. Would like everything %aligned to the left.
+%----------------------------------
+\section{Speeding Up}
+
+In order to speed up, $car_2$ must increase its angular velocity by accelerating tangentially. This will allow it to move ahead of $car_1$.
+
+\begin{equation}
+\underbrace{r\alpha\hat{\theta}}_{\text{Tangential acceleration}}
+\end{equation}
+
+%----------------------------------
+% SECTION 5
+%----------------------------------
+\section{At a Constant Speed}
+
+While $car_2$ moves at this faster speed of 60m/s, it will be continuing to move in a circle, an d will continue to experience centripetal acceleration. 
+
+%----------------------------------
+% SECTION 2
+%----------------------------------
+\section{Slowing Down}
+
+$Car_2$ will slow down after 2 seconds, returning to a speed of 50m/s. it will have moved ahead of $car_1$ at this point, gaining distance around the track with an a comparatively greater angular velocity.
+
+%----------------------------------
+% SECTION 2
+%----------------------------------
+\section{Returning to the Lane}
+Positioned ahead of $car_1$, $car_2$ must now decrease its radius, with a radial velocity towards the center of its circular path.
+
+\begin{equation}
+\underbrace{v_r\hat{r}}_{\text{radial velocity}}
+\end{equation}
+
+%----------------------------------
+% SECTION 2
+%----------------------------------
+\section{Complexities}
+
+There are many complexities that have remained unexamined, including the mechanisms involved in a gradual change in radius and the minimal accelerations necessary for $car_2$ to safely clear $car_1$ without becoming involved in a motor vehicle accident. 
+
+\end{document}
